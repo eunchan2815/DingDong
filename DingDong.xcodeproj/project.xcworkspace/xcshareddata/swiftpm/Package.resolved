@@ -1,0 +1,15 @@
+{
+  "originHash" : "f73b5eb98342c084882c09600593b8ad2faf525833f668e660b5fc4e727b376c",
+  "pins" : [
+    {
+      "identity" : "opentds-swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OpenToss/OpenTDS-SwiftUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d01eb94fc0e787241ed5bb0f1cec32ce0c449af3"
+      }
+    }
+  ],
+  "version" : 3
+}

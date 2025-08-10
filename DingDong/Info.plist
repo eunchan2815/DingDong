@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>UIAppFonts</key>
+        <array>
+            <string>Pinkfong Baby Shark Font_ Regular.ttf</string>
+            <string>Pinkfong Baby Shark Font_ Light.ttf</string>
+            <string>Pinkfong Baby Shark Font_ Bold.ttf</string>
+            <string>Pretendard-Bold.ttf</string>
+            <string>Pretendard-SemiBold.ttf</string>
+            <string>Pretendard-Medium.ttf</string>
+            <string>Pretendard-Regular.ttf</string>
+        </array>
+        <key>UIBackgroundModes</key>
+        <array/>
+        <key>UIUserInterfaceStyle</key>
+        <string>Light</string>
+    </dict>
+</plist>
