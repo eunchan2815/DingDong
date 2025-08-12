@@ -8,10 +8,27 @@
 import SwiftUI
 
 struct SettingItem: View {
-    let imageName: String
+    let systemName: String?
+    let imageName: String?
     let title: String
     let description: String
     let action: () -> Void
+    
+    init(systemName: String, title: String, description: String, action: @escaping () -> Void) {
+        self.systemName = systemName
+        self.imageName = nil
+        self.title = title
+        self.description = description
+        self.action = action
+    }
+    
+    init(imageName: String, title: String, description: String, action: @escaping () -> Void) {
+        self.systemName = nil
+        self.imageName = imageName
+        self.title = title
+        self.description = description
+        self.action = action
+    }
     
     var body: some View {
         Button {
@@ -19,23 +36,29 @@ struct SettingItem: View {
         } label: {
             VStack {
                 HStack {
-                    //                Circle()
-                    //                    .fill(.gray.opacity(0.15))
-                    //                    .frame(width: 45, height: 45)
-                    //                    .overlay {
-                    Image(imageName)
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .foregroundStyle(Color.foreground)
-                    //                    }
+                    if let systemName = systemName {
+                        Image(systemName: systemName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                            .foregroundStyle(Color.black)
+                            .padding(.horizontal, 8)
+                    } else if let imageName = imageName {
+                        Image(imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .foregroundStyle(Color.black)
+                            .padding(.horizontal, 8)
+                    }
                     
                     VStack(alignment: .leading, spacing: 6) {
                         Text(title)
-                            .font(.bold(16))
+                            .font(.bold(14))
                             .foregroundStyle(Color.foreground)
                         
                         Text(description)
-                            .font(.medium(14))
+                            .font(.medium(12))
                             .foregroundStyle(.gray)
                     }
                     .padding(.leading, 2)
@@ -46,7 +69,7 @@ struct SettingItem: View {
                         .foregroundStyle(.gray)
                 }
             }
-            .padding(18)
+            .padding(14)
             .background(.white)
             .clipShape(size: 12)
             .padding(.horizontal, 16)
