@@ -10,7 +10,10 @@ import SwiftUI
 struct AlarmView: View {
     var body: some View {
         DefaultView("Alarm") {
-            
+            ScrollView {
+                VStack {
+                }
+            }
         }
     }
 }

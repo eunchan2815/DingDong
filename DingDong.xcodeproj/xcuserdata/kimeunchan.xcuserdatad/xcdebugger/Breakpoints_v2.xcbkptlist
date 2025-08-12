@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D8C1EE61-AEBF-4526-A442-1D680895B42C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13A0E66D-9B58-434B-A812-B1F92B752B24"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/b0/4gk16_hj5vbdghkjzzvndjdw0000gn/T/swift-generated-sources/@__swiftmacro_8DingDong0020AlarmItemswift_odAJdfMX47_0_33_860DBE237F68FE70243D1B1283F9444DLl7PreviewfMf_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "$s8DingDong0020AlarmItemswift_odAJdfMX47_0_33_860DBE237F68FE70243D1B1283F9444DLl7PreviewfMf_15PreviewRegistryfMu_"
+            landmarkType = "37">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

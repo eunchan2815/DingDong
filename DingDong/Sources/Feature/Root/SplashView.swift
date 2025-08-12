@@ -63,7 +63,7 @@ struct SplashView: View {
                             )
                         
                         Button {
-                            
+                            onContinue()
                         } label: {
                             VStack(spacing: 12) {
                                 Text("터치하여 시작하기")

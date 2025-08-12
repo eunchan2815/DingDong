@@ -24,7 +24,8 @@ public struct DingdongModal<C: View>: View {
             content()
             
             if let modal = provider.modal, provider.isPresent {
-                Color.black.opacity(0.2)
+                Color.clear
+                    .contentShape(Rectangle())
                     .ignoresSafeArea()
                     .onTapGesture { dismiss() }
                     .transition(.opacity)

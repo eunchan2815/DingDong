@@ -10,11 +10,15 @@ import SwiftUI
 struct SettingView: View {
     @ObservedObject var viewModel: FirstLaunchManager
     var body: some View {
-        VStack {
-            Button {
-                viewModel.resetToFirstLaunch()
-            } label: {
-                Text("리셋")
+        DefaultView("Setting") {
+            ScrollView {
+                VStack {
+                    Button {
+                        viewModel.resetToFirstLaunch()
+                    } label: {
+                        Text("리셋")
+                    }
+                }
             }
         }
     }
