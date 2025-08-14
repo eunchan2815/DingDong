@@ -36,7 +36,7 @@ struct SheetButton: View {
                     .clipShape(size: 12)
             }
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, 14)
     }
 }
 

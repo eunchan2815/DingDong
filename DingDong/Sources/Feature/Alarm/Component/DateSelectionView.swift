@@ -14,6 +14,7 @@ struct DateSelectionView: View {
     
     var body: some View {
         VStack(spacing: 8) {
+            Spacer()
             HStack(alignment: .center) {
                 Text("알람 받을 날짜를 선택해주세요.")
                     .font(.bold(20))
@@ -23,8 +24,12 @@ struct DateSelectionView: View {
                 Spacer()
                 
                 HStack {
-                    Circle().fill(Color.main).frame(width: 8, height: 8)
-                    Circle().fill(Color.main).frame(width: 8, height: 8)
+                    Circle()
+                        .fill(Color.main)
+                        .frame(width: 8, height: 8)
+                    Circle()
+                        .fill(.gray.opacity(0.3))
+                        .frame(width: 8, height: 8)
                 }
             }
             .padding(.horizontal, 20)
@@ -74,12 +79,13 @@ struct DateSelectionView: View {
                 .padding(.bottom, 60)
             }
             
+            Spacer()
+            
             SheetButton() {
                 onSave()
             } onCancel: {
                 onCancel()
             }
-            .padding(.bottom, 20)
         }
         .frame(height: 580)
     }
