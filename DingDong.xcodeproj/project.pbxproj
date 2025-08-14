@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B20CE232E4D636F00622A24 /* FlexibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B20CE222E4D636F00622A24 /* FlexibleKit */; };
 		7BAC31932E48E941003ABCE5 /* OpenTDS in Frameworks */ = {isa = PBXBuildFile; productRef = 7BAC31922E48E941003ABCE5 /* OpenTDS */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B20CE232E4D636F00622A24 /* FlexibleKit in Frameworks */,
 				7BAC31932E48E941003ABCE5 /* OpenTDS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +86,7 @@
 			name = DingDong;
 			packageProductDependencies = (
 				7BAC31922E48E941003ABCE5 /* OpenTDS */,
+				7B20CE222E4D636F00622A24 /* FlexibleKit */,
 			);
 			productName = DingDong;
 			productReference = 7BAC30EC2E48E3AB003ABCE5 /* DingDong.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7BAC31912E48E941003ABCE5 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */,
+				7B20CE212E4D636F00622A24 /* XCRemoteSwiftPackageReference "FlexibleKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7BAC30ED2E48E3AB003ABCE5 /* Products */;
@@ -360,6 +364,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7B20CE212E4D636F00622A24 /* XCRemoteSwiftPackageReference "FlexibleKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eunchan2815/FlexibleKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 		7BAC31912E48E941003ABCE5 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OpenToss/OpenTDS-SwiftUI";
@@ -371,6 +383,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7B20CE222E4D636F00622A24 /* FlexibleKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B20CE212E4D636F00622A24 /* XCRemoteSwiftPackageReference "FlexibleKit" */;
+			productName = FlexibleKit;
+		};
 		7BAC31922E48E941003ABCE5 /* OpenTDS */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7BAC31912E48E941003ABCE5 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */;

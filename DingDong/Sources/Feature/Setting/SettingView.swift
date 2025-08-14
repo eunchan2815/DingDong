@@ -26,7 +26,9 @@ struct SettingView: View {
                         title: "기능 지원",
                         description: "사용법 및 기능안내"
                     ) {
-                        //MARK: 명세서 쓰기
+                        if let url = URL(string: "https://www.notion.so/Dingdong-24fcba4137ad800b9b47c0af95ebf2e7?source=copy_link") {
+                            openURL(url)
+                        }
                     }
                     SettingItem(
                         imageName: "Notion",

@@ -11,6 +11,11 @@ struct AlarmView: View {
     var body: some View {
         DefaultView("Alarm") {
             ScrollView {}
+                .overlay(alignment: .bottomTrailing) {
+                    PlusButton {}
+                }
+                .padding(.bottom, 60)
+                .padding(.horizontal, 24)
         }
     }
 }
