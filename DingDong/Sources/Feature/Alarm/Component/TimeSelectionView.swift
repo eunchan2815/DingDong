@@ -52,10 +52,6 @@ struct TimeSelectionView: View {
                         .frame(width: 150)
                         .clipped()
                         
-                        Text(":")
-                            .font(.medium(25))
-                            .foregroundColor(.primary)
-                        
                         Picker("Minute", selection: $minute) {
                             ForEach(0..<60, id: \.self) { minute in
                                 Text("\(minute)분")

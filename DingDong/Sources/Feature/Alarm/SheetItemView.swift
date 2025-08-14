@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SheetItemView: View {
     @StateObject private var viewModel = DateSelectionViewModel(selectedDate: Date())
+    @StateObject private var alarmManager = AlarmNotificationManager.shared
     @Environment(\.dismiss) var dismiss
     @State private var step = 0
+    @State private var showingAlert = false
     
     @State private var hour = Calendar.current.component(.hour, from: Date())
     @State private var minute = Calendar.current.component(.minute, from: Date())
@@ -42,13 +44,8 @@ struct SheetItemView: View {
                         }
                     },
                     onNext: {
-                        let calendar = Calendar.current
-                        var dateComponents = calendar.dateComponents([.year, .month, .day], from: viewModel.selectedDate)
-                        dateComponents.hour = hour
-                        dateComponents.minute = minute
-                        
-                        if let finalDate = calendar.date(from: dateComponents) {
-                            print("최종 알람 시간: \(finalDate)")
+                        Task {
+                            await setupAlarm()
                         }
                         dismiss()
                     }
@@ -62,6 +59,35 @@ struct SheetItemView: View {
         }
         .padding(.horizontal)
         .clipped()
+        .task {
+            let granted = await alarmManager.requestNotificationPermission()
+            if !granted {
+                print("알림 권한이 거부되었습니다.")
+            }
+        }
+    }
+    
+    private func setupAlarm() async {
+        let koreanTimeZone = TimeZone(identifier: "Asia/Seoul")!
+        var calendar = Calendar.current
+        calendar.timeZone = koreanTimeZone
+        
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: viewModel.selectedDate)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        dateComponents.timeZone = koreanTimeZone
+        
+        if let finalDate = calendar.date(from: dateComponents) {
+            if finalDate <= Date() {
+                return
+            }
+            
+            await alarmManager.scheduleAlarm(
+                for: finalDate,
+                title: "딩동~",
+                body: "설정한 알람이 왔어요"
+            )
+        }
     }
 }
 
