@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B20CE232E4D636F00622A24 /* FlexibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B20CE222E4D636F00622A24 /* FlexibleKit */; };
-		7BAC31932E48E941003ABCE5 /* OpenTDS in Frameworks */ = {isa = PBXBuildFile; productRef = 7BAC31922E48E941003ABCE5 /* OpenTDS */; };
+		7B6F21CD2E5070B500F46428 /* FlexibleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B6F21CC2E5070B500F46428 /* FlexibleKit */; };
+		7B6F21D02E5070BB00F46428 /* OpenTDS in Frameworks */ = {isa = PBXBuildFile; productRef = 7B6F21CF2E5070BB00F46428 /* OpenTDS */; };
+		7B6F21D32E5070EC00F46428 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B6F21D22E5070EC00F46428 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B20CE232E4D636F00622A24 /* FlexibleKit in Frameworks */,
-				7BAC31932E48E941003ABCE5 /* OpenTDS in Frameworks */,
+				7B6F21D32E5070EC00F46428 /* RealmSwift in Frameworks */,
+				7B6F21D02E5070BB00F46428 /* OpenTDS in Frameworks */,
+				7B6F21CD2E5070B500F46428 /* FlexibleKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +87,9 @@
 			);
 			name = DingDong;
 			packageProductDependencies = (
-				7BAC31922E48E941003ABCE5 /* OpenTDS */,
-				7B20CE222E4D636F00622A24 /* FlexibleKit */,
+				7B6F21CC2E5070B500F46428 /* FlexibleKit */,
+				7B6F21CF2E5070BB00F46428 /* OpenTDS */,
+				7B6F21D22E5070EC00F46428 /* RealmSwift */,
 			);
 			productName = DingDong;
 			productReference = 7BAC30EC2E48E3AB003ABCE5 /* DingDong.app */;
@@ -117,8 +120,9 @@
 			mainGroup = 7BAC30E32E48E3AB003ABCE5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				7BAC31912E48E941003ABCE5 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */,
-				7B20CE212E4D636F00622A24 /* XCRemoteSwiftPackageReference "FlexibleKit" */,
+				7B6F21CB2E5070B500F46428 /* XCRemoteSwiftPackageReference "FlexibleKit" */,
+				7B6F21CE2E5070BB00F46428 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */,
+				7B6F21D12E5070EC00F46428 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7BAC30ED2E48E3AB003ABCE5 /* Products */;
@@ -288,6 +292,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +328,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,7 +370,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7B20CE212E4D636F00622A24 /* XCRemoteSwiftPackageReference "FlexibleKit" */ = {
+		7B6F21CB2E5070B500F46428 /* XCRemoteSwiftPackageReference "FlexibleKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/eunchan2815/FlexibleKit";
 			requirement = {
@@ -372,7 +378,7 @@
 				minimumVersion = 1.0.5;
 			};
 		};
-		7BAC31912E48E941003ABCE5 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */ = {
+		7B6F21CE2E5070BB00F46428 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OpenToss/OpenTDS-SwiftUI";
 			requirement = {
@@ -380,18 +386,31 @@
 				kind = branch;
 			};
 		};
+		7B6F21D12E5070EC00F46428 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7B20CE222E4D636F00622A24 /* FlexibleKit */ = {
+		7B6F21CC2E5070B500F46428 /* FlexibleKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7B20CE212E4D636F00622A24 /* XCRemoteSwiftPackageReference "FlexibleKit" */;
+			package = 7B6F21CB2E5070B500F46428 /* XCRemoteSwiftPackageReference "FlexibleKit" */;
 			productName = FlexibleKit;
 		};
-		7BAC31922E48E941003ABCE5 /* OpenTDS */ = {
+		7B6F21CF2E5070BB00F46428 /* OpenTDS */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7BAC31912E48E941003ABCE5 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */;
+			package = 7B6F21CE2E5070BB00F46428 /* XCRemoteSwiftPackageReference "OpenTDS-SwiftUI" */;
 			productName = OpenTDS;
+		};
+		7B6F21D22E5070EC00F46428 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B6F21D12E5070EC00F46428 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

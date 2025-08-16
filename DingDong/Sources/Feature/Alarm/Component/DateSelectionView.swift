@@ -30,6 +30,9 @@ struct DateSelectionView: View {
                     Circle()
                         .fill(.gray.opacity(0.3))
                         .frame(width: 8, height: 8)
+                    Circle()
+                        .fill(.gray.opacity(0.3))
+                        .frame(width: 8, height: 8)
                 }
             }
             .padding(.horizontal, 20)
@@ -37,6 +40,7 @@ struct DateSelectionView: View {
             VStack(spacing: 20) {
                 HStack {
                     Button(action: viewModel.previousMonth) { Image(systemName: "chevron.left") }
+                        .disabled(viewModel.selectedDate < Calendar.current.startOfDay(for: Date()))
                     Spacer()
                     Text(viewModel.monthYearString).font(.bold(18))
                     Spacer()
@@ -81,11 +85,11 @@ struct DateSelectionView: View {
             
             Spacer()
             
-            SheetButton() {
-                onSave()
-            } onCancel: {
-                onCancel()
-            }
+            SheetButton(
+                onNext: { onSave() },
+                onCancel: { onCancel() },
+                isNextDisabled: viewModel.selectedDate < Calendar.current.startOfDay(for: Date())
+            )
         }
         .frame(height: 580)
     }

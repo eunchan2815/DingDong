@@ -16,8 +16,6 @@ struct DingDongTabbar: View {
                 .tossTabItem("홈", Image(systemName: "house.fill"))
             AlarmView()
                 .tossTabItem("알람", Image(systemName: "alarm.fill"))
-            TimerView()
-                .tossTabItem("타이머", Image(systemName: "stopwatch.fill"))
             SettingView(
                 viewModel: viewModel
             )

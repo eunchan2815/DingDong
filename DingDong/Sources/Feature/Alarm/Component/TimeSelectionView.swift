@@ -10,8 +10,23 @@ import SwiftUI
 struct TimeSelectionView: View {
     @Binding var hour: Int
     @Binding var minute: Int
+    let selectedDate: Date
     let onCancel: () -> Void
     let onNext: () -> Void
+    
+    var isPastTime: Bool {
+        let now = Date()
+        let calendar = Calendar.current
+        
+        var components = calendar.dateComponents([.year, .month, .day], from: selectedDate)
+        components.hour = hour
+        components.minute = minute
+        
+        if let selectedDateTime = calendar.date(from: components) {
+            return selectedDateTime <= now
+        }
+        return true
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -30,6 +45,9 @@ struct TimeSelectionView: View {
                             .frame(width: 8, height: 8)
                         Circle()
                             .fill(Color.main)
+                            .frame(width: 8, height: 8)
+                        Circle()
+                            .fill(.gray.opacity(0.3))
                             .frame(width: 8, height: 8)
                     }
                 }
@@ -78,11 +96,11 @@ struct TimeSelectionView: View {
             
             Spacer()
             
-            SheetButton() {
-                onNext()
-            } onCancel: {
-                onCancel()
-            }
+            SheetButton(
+                onNext: { onNext() },
+                onCancel: { onCancel() },
+                isNextDisabled: isPastTime
+            )
         }
         .frame(height: 580)
     }
